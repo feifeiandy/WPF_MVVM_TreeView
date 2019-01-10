@@ -12,7 +12,7 @@ namespace WpfApp1
     public class StudentModel:INotifyPropertyChanged
     {
         public Student newStudent;
-        public RelayCommand btnCommand;
+        public RelayCommand btnCommand { get; set; }
         private ObservableCollection<Student> students;
         public ObservableCollection<Student> Students
         {
@@ -63,21 +63,22 @@ namespace WpfApp1
 
     public class RelayCommand : ICommand
     {
+        private Action a;
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            this.a();
         }
 
         public RelayCommand(Action a)
         {
-            a();
+            this.a = a;
         }
     }
 }

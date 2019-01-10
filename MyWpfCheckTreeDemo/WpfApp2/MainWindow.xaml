@@ -8,10 +8,12 @@
     Title="MainWindow"
     Width="800"
     Height="450"
+    Loaded="Window_Loaded"
     mc:Ignorable="d">
     <Grid>
         <Canvas Width="100" Height="100">
             <Path Data="M1,0 A1,1,90,1,1,0,-1" Fill="Red" />
         </Canvas>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="190,177,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
 </Window>
